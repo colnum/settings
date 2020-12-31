@@ -1,0 +1,114 @@
+/*
+ * Markdown PDF CSS
+ */
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+	/*font-size: 20px;*/
+}
+
+img {
+    width: 90%;
+    margin-left: 5%;
+}
+h1 {
+    padding-bottom: 0.3em;
+    line-height: 1.2;
+	/*border-bottom: 2px solid #2f51b4;*/
+	border-bottom: 2px solid #444444;
+    position: relative;
+    padding-left: 18px;
+}
+
+h1:before {
+    /*background: #2f51b4;*/
+	background: #444444;
+	content: "";
+    height: 28px;
+    width: 8px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+}
+
+h2 {
+    padding-bottom: 0.3em;
+    line-height: 1.2;
+    /* border-bottom: 1px solid #2f51b4; */
+    position: relative;
+    padding-left: 18px;
+    /*margin-left: 16px;*/
+}
+
+h2:before {
+    /*background: #2f51b4;*/
+	background: #444444;
+	content: "";
+    height: 20px;
+    width: 5px;
+    left: 0px;
+    position: absolute;
+    top: 3px;
+}
+
+h3 {
+	text-decoration: underline;
+	/*padding-bottom: 0.3em;*/
+    /*line-height: 1.2;*/
+    /*border-bottom: 1px solid #444444;*/
+    position: relative;
+    padding-left: 14px;
+    /*margin-left: 16px;*/
+}
+
+h3:before {
+    /*background: #2f51b4;*/
+	background: #444444;
+	content: "";
+    height: 16px;
+    width: 3px;
+    left: 0px;
+    position: absolute;
+    top: 3px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}

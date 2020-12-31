@@ -1,0 +1,28 @@
+{
+    "folders": [
+        {
+            "path": "Desktop"
+        },
+        {
+            "path": "Git"
+        },
+        {
+            "path": "Code"
+        }
+    ],
+    "settings": {
+        "markdown.preview.fontFamily": "'MigMix 1M', 'Yu Gothic', 'Meiryo', 'SFUIText-Light', 'HelveticaNeue-Light', sans-serif",
+        "markdown.preview.fontSize": 14,
+        "markdown.preview.lineHeight": 1.8,
+        "markdown-pdf.styles": [
+            "~/myPdfStyleDev.css"
+        ],
+        /*"markdown-pdf.margin.top": "3cm",*/
+        /*"markdown-pdf.margin.bottom": "2.2cm",*/
+        "markdown-pdf.printBackground": true,
+        "markdown-pdf.displayHeaderFooter": true,
+        "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"> <span class='date'></span></div>",
+        /*"markdown-pdf.headerTemplate": "<div style=\"position: relative; margin-top: 0.5cm; margin-bottom: 0.5cm; margin-left: 1cm; margin-right: 1cm; width: 100%;\"><img style=\"height: 48px;\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAAB2CAMAAAG2Zd7zAAAAS1BMVEUAAAAtUbYvT7ctUbEvT7MvT7ItUbMuUbMvT7QvUbMuUrQuUbUvULQvULMuUbQvULQuUbMuUbQuUbQvULMvULMuUbQvULQvULMvUbTRrKeAAAAAGHRSTlMAHCA4QFBUWGCAj5+rt7/Hz9vf4+fv8/eJW3VfAAAClElEQVR42u2cfVuDIBTFHVlpFi02F9//k/Zs60UU8HJBFDu/P/as8Ho4goBXXVUtjjYoUYCHEOJeI3HFusXMDlasvHkYW//hbseRnSeaUGwItO5q1f5a1+My9fNdGiUNrfhgNOik2FEJSnHWhvXQhvWKyt2MtqCuzGAbdcyB8gTr7srl9mmv9FmNeTI11SREeurSJAyejlp68WDjSBz+NlAenipAGAzm5zde948IJlSXpYzgxToJq3OUFnwftr9R1i2mw5B1v4qmrPcRfFsYi2F/Er8QlXVg4xUabO86MxMd5reyZtyopfmsMO9qsiDhdkQ24fHJ3AlWGIQhvGFhathRmjS5hOsqkn8hbE4r9YCHpYVdC0bHQkUyp8omWpjXQhAeCQ9HgU9ppZ/+K16YsvzgnnIQXlHYiUi61s6ekwcA3OYM7jlbsDArrIPwdoXHmYg+l3CiTswRZk36EsIQhjCEIZxs8A4XpiH1+Eo9m3B0fg3CEN6FsDt7u7Tw8BGH4R+XAGFFwJs9cuY1FxhGw4VnJwlac0AYwnsXnr8zMF1uyD5eWAw4ObPJE+KFCXmIZBMJhCEM4XTCgZdeOtUKJPTRPsWlAgAAAPYL+x7vag9txxvO+A5xB8MwDMMw7Icwbj7XCdmC4c7Lh37tknHWWzA8V4eEXVrCMAzDMAzDMAzDMAzD8LAOCdfSR+0vf9uA4cc2IWr9FE/eH7STOv5lVhiGYRiGYRgu33DjYq+GOXd5VOGGHSXOt+UCnxd5kQT6dDfdmrUNS8sDhBPeKRuR9rMFw6k2op0aMAzDMAzDMLxTw1lZ37ATFXQrPPuafBHDAQlaGIZhGIZhGIbhIMOhF9mnUMMiH6QEAIMww3nBD/QBAIrnC8vt+gzmA2P4AAAAAElFTkSuQmCC\" /></div>",*/
+        "markdown-pdf.footerTemplate": "<div style=\"font-family: 'MigMix 1M', '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif; position: relative; color: #202020; border-top: 1px solid #202020; margin-top: 0.5cm; margin-bottom: 0.5cm; margin-left: 1cm; margin-right: 1cm; font-size: 9px; width: 100%;\"><div style=\"position: absolute; width: 100%; top: 0.3cm; text-align: center;\"><span class='pageNumber'></span> / <span class='totalPages'></span></div></div>"
+    }
+}

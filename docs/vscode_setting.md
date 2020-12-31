@@ -24,7 +24,17 @@ https://h-s-hige.hateblo.jp/entry/20190405/1554467885
 
 
 ## csvに関する設定
-アクティビティバーの拡張機能から、「csv」で検索すると出てくる「Edit csv」をインストールする
+アクティビティバーの拡張機能から、「csv」で検索すると出てくる「Edit csv」「Rainbow CSV」をインストールする
 
 ## Draw.ioに関する設定
 アクティビティバーの拡張機能から、「draw」で検索すると出てくる「Draw.io Integration」をインストールする
+
+## icon
+アクティビティバーの拡張機能から、「vscode-icons」で検索すると出てくる「vscode-icons」をインストールする
+
+## ファイル操作
+アクティビティバーの拡張機能から、「duplicate」で検索すると出てくる「Duplicate action」をインストールする
+アクティビティバーのexploreから右クリックでファイルやディレクトリを複製できるようになる
+
+## TODO
+その他、vscode自体の設定、setting.jsonなどを記載する
