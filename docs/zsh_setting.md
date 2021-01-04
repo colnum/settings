@@ -69,3 +69,11 @@ foo.pdf
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 zinit self-update
 ```
+
+プラグインのインストール及び起動に関してはzshrcに記述した
+
+## vim操作Zsh Line Editorに関しては以下を参考にする
+https://qiita.com/b4b4r07/items/8db0257d2e6f6b19ecb9
+
+## zshの高速化に関しては以下を参考にする
+http://blog.aqutras.com/entry/2016/05/12/210000

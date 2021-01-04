@@ -1,6 +1,6 @@
 # ------------------------------------------------------------
 # Import {{{
-source ~/.zplug/init.zsh
+#source ~/.zplug/init.zsh
 # }}}
 # ------------------------------------------------------------
 
@@ -10,12 +10,17 @@ source ~/.zplug/init.zsh
 source "${HOME}/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-zinit load momo-lab/zsh-abbrev-alias # 略語を展開する
-#zinit load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色付け
+#zinit load momo-lab/zsh-abbrev-alias # 略語を展開する
+zinit load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色付け
 #zinit load zsh-users/zsh-completions # 補完
 # プラグインの遅延読み込み
-zinit ice wait'!0'; zinit load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色付け
-zinit ice wait'!0'; zinit load zsh-users/zsh-completions # 補完
+#zinit ice wait'!0'; zinit load zsh-users/zsh-syntax-highlighting # 実行可能なコマンドに色付け
+#zinit ice wait'!0'; zinit load zsh-users/zsh-completions # 補完
+ZSH_HIGHLIGHT_STYLES[alias]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[command]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=blue, underline'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
 # }}}
 # ------------------------------------------------------------
 
@@ -60,10 +65,13 @@ export LSCOLORS=gxfxcxdhbxegehabahhfhg
 # GNU(Linux) : ls --color
 export LS_COLORS="di=04;36;49:ln=35;49:so=32;49:pi=33;47:ex=31;49:bd=34;46:cd=34;47:su=30;41:sg=30;47:tw=04;37;47:ow=04;37;45:*.py=32;49:*.c=36;49:*.cpp=36;49:*.cc=36;49:*.h=32;49:*.hh=32;49:*.md=31;49"
 
+# dircolorsファイルの内容をLS_COLORSに設定し、glsコマンドに反映させる
 # mac ls
 #alias ls='ls -GF'
+eval $(gdircolors ~/.dir_colors)
 # GNU ls
 alias ls='gls --color'
+#eval $(dircolors ~/.dir_colors)
 
 # }}}
 # ------------------------------------------------------------
