@@ -1,4 +1,5 @@
 # Setting for VSCode
+各拡張機能をインストールし、ホームディレクトリ直下にworkspaceファイルとcssファイルを置き、起動し直す。
 
 ## 日本語化
 アクティビティバーの拡張機能から、「japanese」で検索すると出てくる「Japanese Language Pack for VS Code」をインストールする。

@@ -1,4 +1,5 @@
 # Setting for Bash
+ホームディレクトリ直下にこのリポジトリの.bashrcと.bash_profileと.profileをコピーし、ログインし直すだけで良い
 
 ## .bash_profileと.bashrcの使い分け
 ### .bash_profile

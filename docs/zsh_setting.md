@@ -1,5 +1,7 @@
 # Setting for zsh
 
+ホームディレクトリ直下にこのリポジトリの.zshrcと.zprofileと.zshenvと.profileをコピーし、ログインし直すだけで良い
+
 ## .zshenvと.zprofileと.zshrcの使い分け
 ログインシェルの場合の読み込み順序
 
@@ -77,3 +79,19 @@ https://qiita.com/b4b4r07/items/8db0257d2e6f6b19ecb9
 
 ## zshの高速化に関しては以下を参考にする
 http://blog.aqutras.com/entry/2016/05/12/210000
+
+## lsの色に関して
+macではBSD版のlsコマンドがインストールされているため、gdircolorsコマンドが使えない。
+そのため以下コマンドによりGNU版lsなどのツールが入ったパッケージをインストールする
+```
+brew install coreutils
+```
+そしてエイリアスの設定で
+```
+alias ls='gls --color=auto'
+```
+としておく。
+
+
+カラー設定については以下を参照
+https://qiita.com/yuyuchu3333/items/84fa4e051c3325098be3
