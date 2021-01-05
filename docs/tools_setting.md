@@ -9,6 +9,9 @@
  - Hyper
  - Draw.io
 
+## nvidia drivers
+https://qiita.com/yto1292/items/463e054943f3076f36cc
+
 ## tmux
 今回はversion3.1bのtmuxを使用することとする。
 
@@ -125,6 +128,13 @@ PATHの設定は.profilenに記述した。
 ## Rust tools
 
 vscodeにrust拡張のLLDB入れてデバッグするの楽しそう
+
+依存ライブラリ
+```
+sudo apt install libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev
+sudo apt install automake autogen libevent-dev libncurses5-dev bison autoconf zlib1g-dev libbison-dev
+```
+
 
 ### exa
  - https://github.com/ogham/exa
