@@ -64,4 +64,9 @@ rcParams['font.sans-serif'] = ['Hiragino Maru Gothic Pro', 'Yu Gothic', 'Meirio'
 numpy
 matplotlib
 pandas
-beautifulsoup
+beautifulsoup4
+lxml
+img2pdf
+youtube-dl
+Pillow
+keras

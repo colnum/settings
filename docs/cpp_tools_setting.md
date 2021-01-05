@@ -351,13 +351,9 @@ unzip opencv_contrib.zip
 ```
 
 ### ビルド
-virtualenvで仮想環境を立ててOpenCVのインストールを進める．
-今回はCUDAをOFFにしてbuildした．
-cmakeの-D OPENCV_EXTRA_MODULES_PATHは，ダウンロードしたopencv_contrib-4.2.0のmodulesディレクトリまでのパスを指定する．
+cmakeの-D OPENCV_EXTRA_MODULES_PATHは，ダウンロードしたopencv_contribのmodulesディレクトリまでのパスを指定する．
 ```
 sudo pip3 install virtualenv virtualenvwrapper
-sudo rm -rf ~/.cache/pip
-echo "add following 3 lines to your .bashrc"
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
@@ -368,28 +364,34 @@ pip install numpy
 cd ~/opencv/opencv-4.2.0
 mkdir build && cd build
 
+# CUDA関係のインストールがうまく行っていないようなので一旦パス
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D CMAKE_C_COMPILER=/usr/bin/gcc \
--D CMAKE_INSTALL_PREFIX=/usr/local \
+-D CMAKE_INSTALL_PREFIX=${HOME}/local \
 -D INSTALL_PYTHON_EXAMPLES=ON \
--D INSTALL_C_EXAMPLES=OFF \
+-D INSTALL_C_EXAMPLES=ON \
 -D WITH_TBB=ON \
 -D WITH_CUDA=OFF \
 -D BUILD_opencv_cudacodec=OFF \
--D ENABLE_FAST_MATH=1 \
--D CUDA_FAST_MATH=1 \
+-D ENABLE_FAST_MATH=ON \
+-D CUDA_FAST_MATH=OFF \
 -D WITH_CUBLAS=1 \
 -D WITH_V4L=ON \
 -D WITH_QT=OFF \
 -D WITH_OPENGL=ON \
 -D WITH_GSTREAMER=ON \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
--D OPENCV_PC_FILE_NAME=opencv.pc \
 -D OPENCV_ENABLE_NONFREE=ON \
--D OPENCV_PYTHON3_INSTALL_PATH=~/.virtualenvs/cv/lib/python3.8/site-packages \
--D OPENCV_EXTRA_MODULES_PATH=~/opencv/opencv_contrib-4.2.0/modules \
--D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python \
--D BUILD_EXAMPLES=ON ..
+-D OPENCV_EXTRA_MODULES_PATH=${HOME}/local/source/opencv_contrib/modules \
+-D PYTHON_EXECUTABLE=/usr/bin/python \
+-D BUILD_EXAMPLES=ON \
+..
+
+
+# -D OPENCV_PC_FILE_NAME=opencv.pc \
+# -D OPENCV_PYTHON3_INSTALL_PATH=~/.virtualenvs/cv/lib/python3.8/site-packages \
+# -D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python \
+
 ```
 
 ```
@@ -405,6 +407,17 @@ sudo make install
 ```
 
 最後にPATHを通す
+```
+vim ~/.zshenv
+export PYTHONPATH=${HOME}/local/lib/python3.8/dist-packages:${PYTHONPATH}
+```
+
+また、顔認識用のxmlは
+```
+${HOME}/local/share/opencv4/haarcascades
+```
+の中にある。
+
 ```
 sudo /bin/bash -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
 sudo ldconfig
