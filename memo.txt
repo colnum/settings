@@ -1,0 +1,157 @@
+初期設定編
+0. 最低限の必須ツール
+sudo apt update
+sudo apt upgrade
+sudo apt install vim
+
+xmonadではJISキーボードが使えないのでHHKBでUSキーボードが使える設定にしておく
+dpkg-reconfigure keyboard-configuration
+Happy Hackingを選択
+English (US)を選択
+AltGrもxserverの設定も不要を選択
+_
+
+1. xmonad
+sudo apt install xmonad libghc-xmonad-dev libghc-xmonad-contrib-dev suckless-tools gmrun
+ログインのし直し
+alt+shift+qでログアウトできる
+ターミナルを出したい場合はalt+shift+enter
+ls ~で.xmonadディレクトリができていることを確認
+なければmkdri .xmonad
+sudo apt install xmobar
+cd ~/.xmonad
+touch xmonad.hs
+touch xmobarrc
+
+```xmonad.hs
+import XMonad
+import XMonad.Hooks.DynamicLog
+
+main :: IO()
+main = do
+    xmobar myConfig >>= xmonad
+
+myConfig = defaultConfig
+    { -- ここに設定を記載 
+      terminal = myTerminal
+    , startupHook = myStartupHook
+    , modMask = mod4Mask -- 有効にするとMODキーがWinキーに変更される
+    }
+
+myTerminal = "gnome-terminal"
+myStartupHook = do
+    -- 壁紙用
+    -- spawn "feh --bg-scale ~/path/to/wallpaper.png"
+    -- 以下、起動したいプログラムがあれば追加する
+    spawn "gnome-terminal"
+    spawn "firefox"
+```
+
+```xmobarrc
+Config {font="monospace"}
+```
+
+上記２つのファイルの設定を間違えると起動できなくなったり、ログインしたまま何もできなくなったりする。
+そのため自動ログインはOFFに設定しておき、なるべく細かくアップデートをしていく必要がある。
+
+
+2. 言語設定
+設定から地域と言語を選択し、「日本語(Mozc)」以外の入力ソースをすべて削除する。
+「日本語(Mozc)」の設定を開き、IME関係のショートカットを2,3回クリックし、ctrl+spaceに変更する。
+
+Ubuntu Japanese Team のリポジトリを追加し、日本語の文字化けを防ぐ
+GNOME Shell 拡張
+
+wget -q https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg -O- | sudo apt-key add - 
+wget -q https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg -O- | sudo apt-key add - 
+sudo wget https://www.ubuntulinux.jp/sources.list.d/focal.list -O /etc/apt/sources.list.d/ubuntu-ja.list 
+sudo apt update 
+sudo apt dist-upgrade 
+sudo apt install ubuntu-defaults-ja 
+
+3. もろもろのソフトのインストール
+グラボのドライバ
+グラボの情報を確認
+sudo lshw -C display
+推奨のドライバを確認
+ubuntu-drivers devices
+recommendedになっているものをインストールする。今回は455
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+apt-cache search nvidia | grep nvidia-driver-455
+sudo apt-get install nvidia-driver-455
+sudo reboot
+
+シェル
+sudo apt install zsh
+chsh -s $(which zsh)
+
+curlとwget
+sudo apt install curl
+sudo apt install wget
+
+vscode
+curl -L https://go.microsoft.com/fwlink/?LinkID=760868 -o vscode.deb
+sudo apt install ./vscode.deb
+code --version
+
+Git
+sudo apt install git 
+
+
+drawio
+
+LINE
+
+Discord
+
+音楽動画プレイヤ
+
+画像ビュアー
+
+PDFビュアー
+
+TeX
+
+Arduinoとraspberrypiのやつ
+
+ゲーム
+
+フォント
+
+メール
+
+リモデ
+
+
+
+4. 諸設定
+
+ゴミ箱をDockに表示する
+gsettings set org.gnome.shell.extensions.dash-to-dock show-trash true 
+戻すときはこう
+gsettings reset org.gnome.shell.extensions.dash-to-dock show-trash 
+Dockのアプリケーション表示ボタンを一番上へ移動する
+gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true 
+戻すときはこう
+gsettings reset org.gnome.shell.extensions.dash-to-dock show-apps-at-top 
+右クリックメニューから空のファイルを作成できるようにする
+ホームフォルダ内のテンプレートフォルダにファイルを置くと、そのファイルをファイルマネージャの右クリックメニューから作成できるようになります。
+ホームフォルダ内のテンプレートフォルダにファイルを置くと、そのファイルをファイルマネージャの右クリックメニューから作成できるようになります。
+touch ~/Templates/空のドキュメント
+音楽とかのコーデックをインストールする
+sudo apt install ubuntu-restricted-extras
+
+5. プログラミング系
+rust 環境
+java 環境
+haskell 環境
+Python とライブラリ環境
+C++用のmake, cmake, gtest, grpc, boostあたりのライブラリ
+
+CUDAと機械学習環境
+
+bashrc, zshrc, vimrc, の設定ファイル
+
+vscodeの拡張、markdown-pdfの設定
+
